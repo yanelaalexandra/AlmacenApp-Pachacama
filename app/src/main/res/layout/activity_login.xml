@@ -8,13 +8,6 @@
     tools:context=".activities.MainActivity"
     android:gravity="center">
 
-    <ProgressBar
-        android:id="@+id/progressbar"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
-
     <LinearLayout
         android:id="@+id/login_panel"
         android:layout_width="match_parent"
@@ -42,7 +35,7 @@
                     android:id="@+id/username_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Username"
+                    android:hint="Usuario"
                     android:inputType="text"
                     android:maxLines="1"
                     android:layout_marginBottom="16dp" />
@@ -57,7 +50,7 @@
                     android:id="@+id/password_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="Contraseña"
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:layout_marginBottom="16dp" />
@@ -67,21 +60,12 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sign In"
+                android:text="Iniciar sesión"
                 android:textStyle="bold"
                 android:background="@color/colorPrimary"
                 android:layout_marginTop="20dp"
                 android:textColor="@android:color/white"
                 android:onClick="callLogin"/>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Sign Up"
-                android:layout_marginTop="15dp"
-                android:textStyle="bold"
-                android:background="@color/colorAccent"
-                android:textColor="@android:color/white"
-                android:onClick="goRegister"/>
 
         </LinearLayout>
 

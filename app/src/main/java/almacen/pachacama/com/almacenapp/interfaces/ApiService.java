@@ -4,6 +4,7 @@ import java.util.List;
 
 import almacen.pachacama.com.almacenapp.models.Producto;
 import almacen.pachacama.com.almacenapp.models.ResponseMessage;
+import almacen.pachacama.com.almacenapp.models.Usuario;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -16,9 +17,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 import retrofit2.http.Path;
 
-/**
- * Created by Alumno on 4/05/2018.
- */
 
 public interface ApiService {
 
@@ -46,5 +44,10 @@ public interface ApiService {
 
     @GET("api/v1/productos/{id}")
     Call<Producto> showProducto(@Path("id") Integer id);
+
+    @FormUrlEncoded
+    @POST("/api/v1/login")
+    Call<Usuario> login(@Field("username") String username,
+                        @Field("password") String password);
 
 }

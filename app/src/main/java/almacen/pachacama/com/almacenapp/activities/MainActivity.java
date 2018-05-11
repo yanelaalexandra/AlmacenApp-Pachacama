@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -25,22 +26,26 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
 
     private RecyclerView productosList;
-
+    private TextView textUsuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        productosList = (RecyclerView) findViewById(R.id.recyclerview);
+        productosList = findViewById(R.id.recyclerview);
         productosList.setLayoutManager(new LinearLayoutManager(this));
-
         productosList.setAdapter(new ProductosAdapter(this));
 
+        //Asignando nombre de usuario a caja de texto
+        textUsuario = findViewById(R.id.textUser);
+        String user = getIntent().getExtras().getString("usuario");
+        textUsuario.setText("Bievenido "+user);
+
+        //Iniciando servicio y cargando lista de productos
         initialize();
 
     }
-
 
     private void initialize() {
 
@@ -103,4 +108,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void callLogin(View view) {
+    }
 }
